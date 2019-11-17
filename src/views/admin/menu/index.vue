@@ -6,7 +6,7 @@
     </div>
 
     <tree-table :data="data" :expand-all="expandAll" :columns="columns" border>
-      <el-table-column label="类型" align="center">
+      <el-table-column label="类型" align="center" >
         <template slot-scope="scope">
           <span v-if="scope.row.type == 0">
             <svg-icon icon-class="panda-menu" />&nbsp;菜单
@@ -132,7 +132,8 @@ export default {
       columns: [
         {
           text: '菜单名称',
-          value: 'name'
+          value: 'name',
+          width: '400px'
         }
       ],
       data: [],

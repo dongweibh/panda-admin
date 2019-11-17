@@ -14,7 +14,7 @@
     <el-table v-loading="table.loading" :data="table.data" :default-sort="{prop : 'roleName', prop: 'roleCode'}" border highlight-current-row fit>
       <el-table-column fixed align="center" type="index" width="50"></el-table-column>
       <el-table-column align="center" label="clientId" prop="clientId"></el-table-column>
-      <el-table-column align="center" label="client密码">
+      <el-table-column align="center" label="client密码" prop="">
 
         <template slot-scope="scope">
           <span style="margin-left: 10px">{{ scope.row.clientSecret | formatSecret }}</span>
@@ -52,8 +52,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="secret" placeholder="请输入client secret" prop="clientSecret">
-              <el-input type="text" v-model="secret" class="w300" v-bind:disabled="isView"></el-input>
+            <el-form-item label="secret"  prop="clientSecret">
+              <el-input type="text" v-model="form.clientSecret" placeholder="请输入client secret" class="w300" v-bind:disabled="isView"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
@@ -173,7 +173,7 @@ export default {
             trigger: 'blur'
           }
         ],
-        secret: [
+        clientSecret: [
           {
             required: true,
             message: '请输入client密码',

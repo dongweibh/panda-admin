@@ -58,6 +58,12 @@
         <el-form-item label="controller包名称" prop="controllerPackageName" v-if="table.param.genType == 'mybatis'">
           <el-input v-model="table.param.controllerPackageName" placeholder="若为空，则加载默认配置"></el-input>
         </el-form-item>
+
+        <el-form-item label="vue模块名" prop="vueModalName" >
+          <el-input v-model="table.param.vueModalName" placeholder="若为空，则加载默认配置"></el-input>
+        </el-form-item>
+
+
         <el-form-item label="作者名称" prop="authorName">
           <el-input v-model="table.param.authorName" placeholder="若为空，则加载默认配置"></el-input>
         </el-form-item>
@@ -112,6 +118,7 @@ export default {
           daoPackageName: '',
           queryPackageName: '',
           serviceApiPackageName: '',
+          vueModalName: '',
           authorName: '',
           genType: 'mybatis',
           tableName: []

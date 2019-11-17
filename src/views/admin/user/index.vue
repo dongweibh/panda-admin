@@ -9,6 +9,7 @@
       <el-button class="search-btn" type="primary" icon="el-icon-plus" @click="handleAdd">添加</el-button>
       <el-button class="search-btn" :autofocus="true" icon="el-icon-refresh" @click="refreshHandle">刷新</el-button>
     </div>
+
     <el-table :key='tableKey' :data="list" v-loading="listLoading" border fit highlight-current-row>
       <el-table-column align="center" prop="userId" label="id" width="80">
       </el-table-column>

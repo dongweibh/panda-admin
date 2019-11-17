@@ -57,3 +57,11 @@ export const fetchPage = (query) => {
     params: query
   })
 }
+
+export const getDictListByParentValue = (query) => {
+  return request({
+    url: `/admin/dict/dictlist/parentvalue`,
+    method: 'post',
+    params: query
+  })
+}
